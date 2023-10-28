@@ -42,17 +42,106 @@ html {
 body {
   background: hsl(207, 19%, 11%);
 }
-/*-----------------------------------*\
-   * #REUSED STYLE
-  \*-----------------------------------*/
-
 .container {
   padding-inline: 15px;
 }
 
-/**
-   * TITLES & SUBTITLES
-   */
+header {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  z-index: 2;
+  top: 0;
+}
+
+.navbar {
+  min-height: 4.375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.25rem;
+  margin: 0 5vw;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.75rem;
+  padding-left: 0;
+}
+
+.navbar-branding {
+  color: white;
+  transform: scale(1.1);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brandstyle {
+  color: rgb(240, 49, 43);
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  background-image: radial-gradient(
+      18% 28% at 24% 50%,
+      #cefaffff 7%,
+      #073aff00 100%
+    ),
+    radial-gradient(18% 28% at 18% 71%, #ffffff59 6%, #073aff00 100%),
+    radial-gradient(70% 53% at 36% 76%, #73f2ffff 0%, #073aff00 100%),
+    radial-gradient(42% 53% at 15% 94%, #ffffffff 7%, #073aff00 100%),
+    radial-gradient(42% 53% at 34% 72%, #ffffffff 7%, #073aff00 100%),
+    radial-gradient(18% 28% at 35% 87%, #ffffffff 7%, #073aff00 100%),
+    radial-gradient(31% 43% at 7% 98%, #ffffffff 24%, #073aff00 100%),
+    radial-gradient(21% 37% at 72% 23%, #d3ff6d9c 24%, #073aff00 100%),
+    radial-gradient(35% 56% at 91% 74%, #8a4ffff5 9%, #073aff00 100%),
+    radial-gradient(74% 86% at 67% 38%, #6dffaef5 24%, #073aff00 100%),
+    linear-gradient(125deg, #4eb5ffff 1%, #4c00fcff 100%);
+  background-size: 0% 0.188rem;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: background-size 300ms ease;
+}
+
+.nav-link:hover {
+  background-size: 100% 0.188rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 1.563rem;
+  height: 0.188rem;
+  margin: 0.313rem auto;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease-in-out;
+  color: white;
+}
+
+.mode__con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .h2 {
   color: hsl(0, 100%, 100%);
@@ -85,67 +174,8 @@ li .filter-btn {
   cursor: none;
 }
 
-.nav {
-  display: flex;
-  padding: 1rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1280px;
-}
-.nav a {
-  display: flex;
-  align-items: center;
-}
-.logo {
-  display: flex;
-  padding: 1rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1280px;
-}
-.logo a {
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-  font-family: "Monaco";
-  font-size: 30px;
-}
-
-.logo span:hover {
-  color: #5468ff;
-  text-shadow: 0 3px 25px #5468ff;
-}
-.logo img {
-  width: 100px;
-}
-
-.nav ul {
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.5rem;
-  border-width: 1px;
-  font-weight: 500;
-  flex-direction: row;
-  margin-left: 2rem;
-  flex-direction: row;
-  border: none;
-}
-
-.navigasi li a {
-  margin: 20px;
-  color: #ffffff;
-  font-family: "Monaco";
-  font-size: 30px;
-}
-.navigasi li a:hover {
-  color: #5468ff;
-  text-shadow: 0 3px 25px #5468ff;
-}
-
 .header h1 {
-  margin-top: 30px;
+  margin-top: 180px;
   line-height: 2.25rem;
   font-weight: 900;
   line-height: 1;
@@ -335,6 +365,7 @@ li .filter-btn {
   overflow-x: auto;
   scroll-snap-type: inline mandatory;
   padding-bottom: 25px;
+  margin: 0;
 }
 
 .has-scrollbar::-webkit-scrollbar {
@@ -444,4 +475,130 @@ li .filter-btn {
 .footer h5 {
   color: white;
   text-shadow: 0 0 10px #3c6e71;
+}
+
+/* This is a media query. It is saying that if the screen is less than 769px, then do the following. */
+@media only screen and (max-width: 769px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(0.5rem) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-0.5rem) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: 0;
+    top: -100vh;
+    gap: 0;
+    flex-direction: column;
+    background-color: #222;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+
+  .nav-item {
+    margin: 1rem 0;
+  }
+
+  .nav-menu.active {
+    top: 3.813rem;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .header h1 {
+    margin-top: 120px;
+  }
+  .header p {
+    padding-left: 0;
+    margin: 0;
+    padding-inline: 10px;
+    font-size: 22px;
+    line-height: 40px;
+  }
+
+  .movies-list.has-scrollbar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    place-items: center;
+    padding: 0;
+    margin-inline: 10px;
+    margin-top: 30px;
+  }
+
+  .filter-list {
+    padding-left: 0;
+  }
+  .navigasi ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+.nav-icon-6 {
+  width: 35px;
+  height: 30px;
+  margin: 10px 10px;
+  position: relative;
+  display: inline-block;
+}
+.nav-icon-6 span {
+  background-color: white;
+  position: absolute;
+  border-radius: 2px;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  width: 100%;
+  height: 4px;
+}
+.nav-icon-6 span:nth-child(1) {
+  top: 0px;
+  left: 0px;
+}
+.nav-icon-6 span:nth-child(2) {
+  top: 13px;
+  left: 0px;
+}
+.nav-icon-6 span:nth-child(3) {
+  bottom: 0px;
+  left: 0px;
+}
+.nav-icon-6:not(.open):hover span:nth-child(1) {
+  transform: scaleY(1.2);
+  left: -5px;
+}
+.nav-icon-6:not(.open):hover span:nth-child(2) {
+  transform: rotate(5deg) scaleY(1.1);
+}
+.nav-icon-6:not(.open):hover span:nth-child(3) {
+  transform: scaleY(1.2);
+  left: 5px;
+}
+.nav-icon-6.open span:nth-child(1) {
+  transform: rotate(45deg) scaleX(0.7);
+  top: 13px;
+  left: -8px;
+}
+.nav-icon-6.open span:nth-child(2) {
+  transform: scale(0);
+  transition-duration: 50ms;
+}
+.nav-icon-6.open span:nth-child(3) {
+  transform: rotate(-45deg) scaleX(0.7);
+  top: 13px;
+  left: 7px;
 }
