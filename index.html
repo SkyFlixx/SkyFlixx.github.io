@@ -9,27 +9,35 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="nav">
-      <div class="logo">
-        <a href="index.html">
-          <img src="logo.png" alt="Logo" />
-          <span>SkyFlix</span>
-        </a>
-      </div>
-      <div class="navigasi">
-        <ul>
-          <li>
-            <a href="#home">Home</a>
+    <header>
+      <nav class="navbar">
+        <a href="#" class="navbar-branding"
+          ><img class="logo" src="logo.png" alt="beginner logo" />SkyFlix</a
+        >
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item">
+            <a href="#movie" class="nav-link">Movie</a>
           </li>
-          <li>
-            <a href="#movie">Movie</a>
+          <li class="nav-item">
+            <a href="member.html" class="nav-link">Member</a>
           </li>
-          <li>
-            <a href="member.html">Member</a>
+          <li class="nav-item">
+            <div class="mode__con"></div>
           </li>
         </ul>
-      </div>
-    </div>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <div class="icon nav-icon-6">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <div
       class="header"
@@ -46,7 +54,6 @@
         sinopsis, rating, durasi serta trailer dari film tersebut.
       </p>
       <h2>Take Your Coffe And Enjoy The Movie</h2>
-      />
     </div>
 
     <div
@@ -641,5 +648,6 @@
         once: true,
       });
     </script>
+    <script src="Aset/script.js"></script>
   </body>
 </html>
