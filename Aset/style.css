@@ -37,7 +37,7 @@ html {
 }
 
 body {
-  background: hsl(207, 19%, 11%);
+  background-image: url('Aset/background.jpg');
 }
 .container {
   padding-inline: 10px;
