@@ -5,18 +5,6 @@
   cursor: url("cursor.cur"), auto !important;
 }
 
-/* Setting the default background color to white and the default text color to black. */
-:root {
-  --bg-color: white;
-  --txt-color: black;
-}
-
-/* Setting the background color to black and the text color to white. */
-.dark__mode {
-  --bg-color: #222;
-  --txt-color: white;
-}
-
 html {
   scroll-behavior: smooth;
   background: hsl(207, 19%, 11%);
