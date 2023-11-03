@@ -308,10 +308,11 @@ section {
 }
 
 .footer {
+  height: 4vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(207, 19%, 11%);
+  background-color: hsl(0, 0%, 0%);
 }
 .footer h5 {
   color: white;
@@ -362,6 +363,7 @@ section {
   iframe {
     width: 387px;
     height: 240px;
+    border: hsl(57, 97%, 45%) 1px solid;
   }
   .hero {
     display: grid;
